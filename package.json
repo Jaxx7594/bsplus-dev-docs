@@ -1,25 +1,26 @@
 {
-  "name": "shadcn-docs-nuxt",
+  "name": "betterseqta-docs",
   "type": "module",
-  "version": "1.1.8",
+  "version": "1.0.0",
   "packageManager": "pnpm@10.26.0",
-  "description": "Effortless and beautiful docs template built with Nuxt Content & shadcn-vue.",
-  "author": "Tony Zhang <zhangtianli2006@gmail.com>",
+  "description": "Documentation for BetterSEQTA projects including DesQTA",
+  "author": "BetterSEQTA",
   "license": "MIT",
-  "homepage": "https://shadcn-docs-nuxt.vercel.app/",
+  "homepage": "https://docs.betterseqta.org/",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ZTL-UwU/shadcn-docs-nuxt.git"
+    "url": "git+https://github.com/betterseqta/desqta.git"
   },
-  "bugs": "https://github.com/ZTL-UwU/shadcn-docs-nuxt/issues",
+  "bugs": "https://github.com/betterseqta/desqta/issues",
   "keywords": [
-    "markdown",
+    "betterseqta",
+    "desqta",
+    "seqta",
+    "documentation",
     "docs",
     "vue",
     "nuxt",
-    "documentation-tool",
-    "nuxt-content",
-    "shadcn-vue"
+    "nuxt-content"
   ],
   "main": "./nuxt.config.ts",
   "files": [

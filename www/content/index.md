@@ -6,30 +6,36 @@ navigation: false
 ::hero
 ---
 announcement:
-  title: 'v1.1 release'
-  icon: '🎉'
-  to: /blog/v1-1
+  title: 'BetterSEQTA Documentation'
+  icon: '📚'
+  to: /betterseqta
 actions:
-  - name: Get Started
-    to: /getting-started/introduction
+  - name: DesQTA User Guide
+    to: /betterseqta/desqta/user-guide/getting-started
+  - name: DesQTA Developer Guide
+    variant: outline
+    to: /betterseqta/desqta/developer-guide/introduction
   - name: GitHub
     variant: outline
-    to: https://github.com/ZTL-UwU/shadcn-docs-nuxt
+    to: https://github.com/BetterSEQTA/DesQTA
     leftIcon: 'lucide:github'
-  - name: Sponsor
-    variant: outline
-    target: _blank
-    to: https://ko-fi.com/ztl_uwu
-    leftIcon: 'lucide:heart'
 ---
 
 #title
-Effortless and Beautiful :br Docs Template.
+BetterSEQTA Documentation
 
 #description
-Beautifully designed Nuxt Content template built with shadcn-vue. :br Customizable. Compatible. Open Source.
+Complete documentation for BetterSEQTA projects including DesQTA. :br User guides, developer documentation, and more.
 ::
 
-::div{class="border rounded-lg shadow-md"}
-  :iframe{src="/getting-started/introduction" height="700" width="100%" class="rounded-lg" scrolling="no" frameborder="0"}
+::div{class="border rounded-lg shadow-md p-6"}
+## Quick Links
+
+### DesQTA
+- [User Guide](/betterseqta/desqta/user-guide/getting-started) - Learn how to use DesQTA
+- [Developer Guide](/betterseqta/desqta/developer-guide/introduction) - Contribute to DesQTA
+
+## About BetterSEQTA
+
+BetterSEQTA is a collection of projects aimed at enhancing the SEQTA Learn experience with modern tools, improved interfaces, and additional features.
 ::

@@ -48,7 +48,7 @@ export default defineNuxtConfig({
         default: 'github-light',
         dark: 'github-dark',
       },
-      preload: ['json', 'js', 'ts', 'html', 'css', 'vue', 'diff', 'shell', 'markdown', 'mdc', 'yaml', 'bash', 'ini', 'dotenv'],
+      preload: ['json', 'js', 'ts', 'html', 'css', 'vue', 'diff', 'shell', 'markdown', 'mdc', 'yaml', 'bash', 'ini', 'dotenv', 'rust', 'svelte', 'typescript'],
     },
     navigation: {
       fields: [
@@ -69,6 +69,11 @@ export default defineNuxtConfig({
       search: {
         indexed: true,
       },
+    },
+  },
+  mdc: {
+    highlight: {
+      langs: ['json', 'js', 'ts', 'html', 'css', 'vue', 'diff', 'shell', 'markdown', 'mdc', 'yaml', 'bash', 'ini', 'dotenv', 'rust', 'svelte', 'typescript'],
     },
   },
   icon: {

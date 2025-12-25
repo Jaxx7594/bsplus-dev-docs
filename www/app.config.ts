@@ -1,8 +1,8 @@
 export default defineAppConfig({
   shadcnDocs: {
     site: {
-      name: 'shadcn-docs',
-      description: 'Beautifully designed Nuxt Content template built with shadcn-vue. Customizable. Compatible. Open Source.',
+      name: 'BetterSEQTA Docs',
+      description: 'Complete documentation for BetterSEQTA projects including DesQTA. User guides, developer documentation, and more.',
       ogImage: '/hero.png',
       ogImageComponent: 'ShadcnDocs',
       ogImageColor: 'light',
@@ -20,13 +20,13 @@ export default defineAppConfig({
     banner: {
       enable: false,
       showClose: true,
-      content: 'Welcome to **shadcn-docs-nuxt**',
-      to: 'https://github.com/ZTL-UwU/shadcn-docs-nuxt',
+      content: 'Welcome to **BetterSEQTA Documentation**',
+      to: 'https://github.com/betterseqta/desqta',
       target: '_blank',
       border: true,
     },
     header: {
-      title: 'shadcn-docs',
+      title: 'BetterSEQTA Docs',
       showTitle: true,
       logo: {
         light: '/logo.svg',
@@ -35,67 +35,28 @@ export default defineAppConfig({
       border: false,
       darkModeToggle: true,
       languageSwitcher: {
-        enable: true,
+        enable: false,
         triggerType: 'icon',
         dropdownType: 'select',
       },
       nav: [{
-        title: 'Docs',
+        title: 'Documentation',
         links: [{
-          title: 'Getting Started',
-          to: '/getting-started',
-          description: 'Start building your document with shadcn-docs-nuxt',
-          icon: 'lucide:rocket',
+          title: 'DesQTA User Guide',
+          to: '/betterseqta/desqta/user-guide/getting-started',
+          description: 'Learn how to use DesQTA',
+          icon: 'lucide:book-open',
         }, {
-          title: 'Components',
-          to: '/components/prose',
-          description: 'Explore available UI components and usage examples.',
-          icon: 'lucide:box',
-        }, {
-          title: 'API',
-          to: '/api/configuration/shadcn-docs',
-          description: 'Discover the configurations and exposed APIs.',
-          target: '_self',
+          title: 'DesQTA Developer Guide',
+          to: '/betterseqta/desqta/developer-guide/introduction',
+          description: 'Contribute to DesQTA development',
           icon: 'lucide:code',
         }],
-      }, {
-        title: 'Credits',
-        links: [{
-          title: 'shadcn-ui',
-          to: 'https://ui.shadcn.com/',
-          description: 'For the beautiful component design & docs design',
-          target: '_blank',
-        }, {
-          title: 'shadcn-vue',
-          to: 'https://www.shadcn-vue.com/',
-          description: 'For the vue port of shadcn-ui & some docs component source',
-          target: '_blank',
-        }, {
-          title: 'Docus',
-          to: 'https://docus.dev/',
-          description: 'For inspiration & some docs component source',
-          target: '_blank',
-        }, {
-          title: 'Nuxt Content',
-          to: 'https://content.nuxt.com/',
-          description: 'Content made easy for Vue Developers',
-          target: '_blank',
-        }],
-      }, {
-        title: 'Blog',
-        to: '/blog',
-        target: '_self',
-        showLinkIcon: false,
       }],
       links: [
         {
-          icon: 'lucide:coffee',
-          to: 'https://ko-fi.com/ztl_uwu',
-          target: '_blank',
-        },
-        {
           icon: 'lucide:github',
-          to: 'https://github.com/ZTL-UwU/shadcn-docs-nuxt',
+          to: 'https://github.com/betterseqta/',
           target: '_blank',
         },
       ],
@@ -115,7 +76,7 @@ export default defineAppConfig({
       codeCopyIcon: 'lucide:clipboard',
       editLink: {
         enable: true,
-        pattern: 'https://github.com/ZTL-UwU/shadcn-docs-nuxt/edit/main/www/content/:path',
+        pattern: 'https://github.com/betterseqta/desqta/edit/develop/www/content/:path',
         text: 'Edit this page',
         icon: 'lucide:square-pen',
         placement: ['docsFooter'],
@@ -168,32 +129,18 @@ export default defineAppConfig({
     },
     footer: {
       border: true,
-      credits: 'FOOTER_CREDIT',
+      credits: 'Built with BetterSEQTA',
       links: [
         {
-          icon: 'lucide:heart',
-          title: 'Sponsor Me',
-          to: 'https://ko-fi.com/ztl_uwu',
-          target: '_blank',
-        },
-        {
-          icon: 'lucide:twitter',
-          to: 'https://x.com/ZTL_UwU',
-          target: '_blank',
-        },
-        {
-          icon: 'lucide-lab:butterfly',
-          to: 'https://bsky.app/profile/ztl-uwu.bsky.social',
+          icon: 'lucide:github',
+          title: 'GitHub',
+          to: 'https://github.com/betterseqta/desqta',
           target: '_blank',
         },
         {
           icon: 'simple-icons:discord',
-          to: 'https://discord.gg/9P5HzAz8DT',
-          target: '_blank',
-        },
-        {
-          icon: 'lucide:github',
-          to: 'https://github.com/ZTL-UwU/shadcn-docs-nuxt',
+          title: 'Discord',
+          to: 'https://discord.gg/YzmbnCDkat',
           target: '_blank',
         },
       ],
@@ -208,37 +155,27 @@ export default defineAppConfig({
         {
           title: 'Star on GitHub',
           icon: 'lucide:star',
-          to: 'https://github.com/ZTL-UwU/shadcn-docs-nuxt',
+          to: 'https://github.com/betterseqta/desqta',
           target: '_blank',
           showLinkIcon: true,
         },
         {
           title: 'Create Issues',
           icon: 'lucide:circle-dot',
-          to: 'https://github.com/ZTL-UwU/shadcn-docs-nuxt/issues',
+          to: 'https://github.com/betterseqta/desqta/issues',
           target: '_blank',
           showLinkIcon: true,
         },
       ],
       iconLinks: [
         {
-          icon: 'lucide:coffee',
-          to: 'https://ko-fi.com/ztl_uwu',
-          target: '_blank',
-        },
-        {
-          icon: 'lucide:twitter',
-          to: 'https://x.com/ZTL_UwU',
-          target: '_blank',
-        },
-        {
-          icon: 'lucide-lab:butterfly',
-          to: 'https://bsky.app/profile/ztl-uwu.bsky.social',
+          icon: 'lucide:github',
+          to: 'https://github.com/betterseqta/desqta',
           target: '_blank',
         },
         {
           icon: 'simple-icons:discord',
-          to: 'https://discord.gg/9P5HzAz8DT',
+          to: 'https://discord.gg/YzmbnCDkat',
           target: '_blank',
         },
       ],
@@ -249,7 +186,7 @@ export default defineAppConfig({
         fallback: false,
         fallbackMessage: 'Please support us by disabling your ad blocker.',
         code: 'CW7ITKJN',
-        placement: 'shadcn-docs-nuxtvercelapp',
+        placement: 'betterseqta-docs',
         format: 'cover',
       },
     },
