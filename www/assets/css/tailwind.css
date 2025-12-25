@@ -106,7 +106,7 @@
 /* Custom sidebar width for better title visibility */
 @layer components {
   :root {
-    --sidebar-width: 280px;
+    --sidebar-width: 320px;
   }
   
   /* Override sidebar width - targets shadcn-docs-nuxt sidebar */
@@ -121,27 +121,46 @@
     max-width: var(--sidebar-width) !important;
   }
   
-  /* Ensure sidebar navigation items wrap properly */
+  /* Ensure sidebar navigation items wrap properly with more padding */
   aside nav a,
   aside nav button,
   [data-sidebar] nav a,
   [data-sidebar] nav button,
   aside .nav-item,
-  aside .nav-link {
-    padding-left: 1rem !important;
-    padding-right: 1rem !important;
+  aside .nav-link,
+  aside [role="button"],
+  [data-sidebar] [role="button"] {
+    padding-left: 1.25rem !important;
+    padding-right: 1.25rem !important;
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
     white-space: normal !important;
     word-wrap: break-word !important;
     overflow-wrap: break-word !important;
+    min-height: 2.5rem !important;
   }
   
-  /* Allow text in sidebar to wrap */
+  /* Allow text in sidebar to wrap and prevent truncation */
   aside span,
   aside .text,
   [data-sidebar] span,
-  [data-sidebar] .text {
+  [data-sidebar] .text,
+  aside [class*="text"],
+  [data-sidebar] [class*="text"] {
     white-space: normal !important;
     word-wrap: break-word !important;
     overflow-wrap: break-word !important;
+    text-overflow: unset !important;
+    overflow: visible !important;
+  }
+  
+  /* Prevent text truncation in navigation items */
+  aside a > span,
+  aside button > span,
+  [data-sidebar] a > span,
+  [data-sidebar] button > span {
+    overflow: visible !important;
+    text-overflow: unset !important;
+    white-space: normal !important;
   }
 }
