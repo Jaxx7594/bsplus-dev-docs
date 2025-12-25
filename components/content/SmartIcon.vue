@@ -26,6 +26,10 @@ const { size = 16 } = defineProps<{
 function checkIcon(name: string): boolean {
   if (name.includes('http'))
     return false;
+  
+  // Check if it's a file path (starts with / or contains file extension)
+  if (name.startsWith('/') || /\.(png|jpg|jpeg|gif|svg|webp|ico)$/i.test(name))
+    return false;
 
   return validateIconName(stringToIcon(name));
 }
