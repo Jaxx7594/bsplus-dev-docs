@@ -36,13 +36,4 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy www/.output/public --project-name=betterseqta-docs
-
-      - name: Deploy to Preview (Develop)
-        if: github.ref == 'refs/heads/develop'
-        uses: cloudflare/wrangler-action@v3
-        with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy www/.output/public --project-name=betterseqta-docs --branch=develop
-
+          command: pages deploy
