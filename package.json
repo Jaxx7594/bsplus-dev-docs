@@ -38,7 +38,7 @@
     "types"
   ],
   "scripts": {
-    "build": "nuxt prepare && nuxt build www",
+    "build": "NODE_OPTIONS='--max-old-space-size=4096' nuxt prepare && NODE_OPTIONS='--max-old-space-size=4096' nuxt build www",
     "dev": "nuxt prepare && nuxt dev www",
     "generate": "nuxt prepare && nuxt generate www",
     "preview": "nuxt prepare && nuxt preview www",

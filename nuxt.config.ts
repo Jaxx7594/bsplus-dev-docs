@@ -13,7 +13,8 @@ export default defineNuxtConfig({
     '@nuxt/image',
     '@nuxt/icon',
     '@nuxtjs/color-mode',
-    'nuxt-og-image',
+    // Temporarily disabled to reduce memory usage during Cloudflare Pages build
+    // 'nuxt-og-image',
     '@nuxt/scripts',
     '@nuxtjs/i18n',
     '@nuxt/fonts',
@@ -118,13 +119,22 @@ export default defineNuxtConfig({
     experimental: {
       wasm: true,
     },
+    // Optimize memory usage
+    minify: true,
+    sourceMap: false,
+    compressPublicAssets: true,
     rollupConfig: {
+      // Optimize memory usage during build
+      treeshake: {
+        moduleSideEffects: false,
+      },
       plugins: [
         {
           name: 'handle-node-builtins',
           resolveId(id, importer) {
             // Only handle node: imports during production build for Cloudflare Pages
             // Skip during dev mode where Node.js built-ins are available
+            // eslint-disable-next-line node/prefer-global/process
             const isDev = process.env.NODE_ENV !== 'production' && !process.env.CI;
 
             if (isDev) {
@@ -133,7 +143,8 @@ export default defineNuxtConfig({
             }
 
             // During build, provide polyfills for Cloudflare Pages
-            if (id.startsWith('node:')) {
+            // Only intercept if it's actually being imported (not already resolved)
+            if (id.startsWith('node:') && importer) {
               const moduleName = id.replace('node:', '');
               return { id: `\0virtual:node-${moduleName}`, external: false };
             }
@@ -914,7 +925,7 @@ export default defineNuxtConfig({
         },
         {
           name: 'exclude-native-bindings',
-          resolveId(id, importer) {
+          resolveId(id) {
             // Handle relative imports of .node files from @resvg/resvg-js
             if (id.includes('.node')) {
               return { id: '\0virtual:empty-node', external: false };
