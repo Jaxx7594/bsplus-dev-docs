@@ -97,9 +97,65 @@ export default defineNuxtConfig({
   vite: {
     plugins: [
       tailwindcss(),
+      {
+        name: 'exclude-native-bindings',
+        resolveId(id) {
+          // Exclude native bindings from resolution
+          if (id.includes('.node') || (id.includes('resvgjs') && (id.includes('android') || id.includes('darwin') || id.includes('win32') || id.includes('linux')))) {
+            return { id: 'data:text/javascript,export default {}', external: true };
+          }
+          return null;
+        },
+      },
     ],
     optimizeDeps: {
       include: ['debug'],
+      exclude: ['@resvg/resvg-js'],
+    },
+  },
+  nitro: {
+    preset: 'cloudflare-pages',
+    experimental: {
+      wasm: true,
+    },
+    rollupConfig: {
+      plugins: [
+        {
+          name: 'exclude-native-bindings',
+          resolveId(id, importer) {
+            // Handle relative imports of .node files from @resvg/resvg-js
+            if (id.includes('.node')) {
+              return { id: '\0virtual:empty-node', external: false };
+            }
+            // Handle platform-specific resvg bindings
+            if (id.includes('resvgjs') && (id.includes('android') || id.includes('darwin') || id.includes('win32') || id.includes('linux'))) {
+              return { id: '\0virtual:empty-node', external: false };
+            }
+            return null;
+          },
+          load(id) {
+            if (id === '\0virtual:empty-node') {
+              return 'export default {};';
+            }
+            return null;
+          },
+        },
+      ],
+      external: (id) => {
+        // Exclude all .node files (native bindings) from bundling
+        if (id.includes('.node')) {
+          return true;
+        }
+        return false;
+      },
+    },
+    esbuild: {
+      options: {
+        external: [
+          // Exclude native bindings from esbuild
+          /\.node$/,
+        ],
+      },
     },
   },
   compatibilityDate: '2025-05-13',
