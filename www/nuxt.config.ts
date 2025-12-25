@@ -38,5 +38,17 @@ export default defineNuxtConfig({
       'Geist:700',
     ],
   },
+  nitro: {
+    prerender: {
+      // Continue building even if some routes fail to prerender
+      failOnError: false,
+      // Don't crawl links that might not exist yet
+      crawlLinks: true,
+      // Ignore 404 errors during prerender
+      ignore: [
+        '/api/_content/query/*',
+      ],
+    },
+  },
   compatibilityDate: '2025-05-13',
 });

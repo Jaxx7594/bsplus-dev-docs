@@ -1,0 +1,25 @@
+# Cloudflare Pages configuration for BetterSEQTA Docs
+# This uses the new Wrangler 3.x configuration format
+
+name = "betterseqta-docs"
+compatibility_date = "2025-05-13"
+compatibility_flags = ["nodejs_compat"]
+
+# Pages build output directory
+# Nuxt generates static files to www/.output/public when using 'generate'
+pages_build_output_dir = "www/.output/public"
+
+# Environment variables
+[vars]
+NODE_ENV = "production"
+
+# Pages deployment settings
+# Note: Build command must be specified via CLI or dashboard:
+#   wrangler pages deploy www/.output/public --project-name=betterseqta-docs
+#
+# Or in Cloudflare Pages dashboard:
+# - Build command: pnpm install && pnpm generate
+# - Build output directory: www/.output/public
+# - Root directory: (leave empty, uses root)
+# - Node.js version: 20.x or later (recommended)
+
