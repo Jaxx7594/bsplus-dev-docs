@@ -16,11 +16,11 @@ jobs:
           node-version: "20"
       # Pick your own package manager and build script
       - run: pnpm install
-      - run: pnpm run build
+      - run: pnpm run generate
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./www/.output/public
+          path: .output/public
   # Deployment job
   deploy:
     # Add a dependency to the build job
