@@ -102,5 +102,8 @@ export default defineNuxtConfig({
       include: ['debug'],
     },
   },
+  site: {
+    url: 'https://bs-docs.jaxx7594.cc',
+  },
   compatibilityDate: '2025-05-13',
 });
